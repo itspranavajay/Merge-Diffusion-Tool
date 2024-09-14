@@ -1,86 +1,109 @@
 # Merge Diffusion Tool
 
-**Merge Diffusion Tool** is an open-source tool designed to merge LoRA models, integrate LoRA models into checkpoints, and merge two checkpoints. It supports Flux Dev, Flux Schnell, Stable Diffusion 1.5, SD2, SD3, and SDXL models.
+**Merge Diffusion Tool** is an open-source solution developed by **EnhanceAI.art**, providing seamless ways to blend LoRA models, integrate LoRA into checkpoints, and merge Stable Diffusion checkpoints. Enhance your AI workflows with this powerful merging tool, designed to support a wide range of diffusion models like **Flux Dev**, **Flux Schnell**, **Stable Diffusion 1.5**, **SD2**, **SD3**, and **SDXL**.
+
+Discover more advanced AI tools at [EnhanceAI.art](https://enhanceai.art).
 
 ## Features
 
-- **Merge two LoRA models** with custom blend ratios.
-- **Merge LoRA into a checkpoint** model with specified weight.
-- **Merge two checkpoints** with a custom blend ratio.
-- Supports `.safetensors` format for efficient and safe storage of models.
+- **Merge Two LoRA Models** with adjustable blending ratios.
+- **Integrate LoRA into a Checkpoint** for enhanced model performance.
+- **Merge Two Checkpoints** using custom blend ratios.
+- Full support for `.safetensors` format, ensuring efficient and safe handling.
+
+### Key Advantages:
+- Streamline your AI model merging process.
+- Built with flexibility to cater to diverse AI model formats.
+- Completely open-source with community support via Discord.
+
+---
 
 ## Installation
 
-To install the required dependencies, simply run:
+To set up the tool, follow these steps:
 
-```bash
-pip install -r requirements.txt
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/merge-diffusion-tool.git
+   cd merge-diffusion-tool
+   ```
 
-## Requirements
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- Python 3.8+
-- PyTorch
-- Safetensors library
+### Dependencies:
+
+- **Python 3.8+**
+- **PyTorch** for deep learning operations.
+- **Safetensors** library for model file handling.
+
+---
 
 ## Usage
 
-The `Merge Diffusion Tool` can handle three types of merging operations:
+The **Merge Diffusion Tool** provides three main operations:
 
 1. **Merge Two LoRA Models**
 2. **Merge LoRA into a Checkpoint**
 3. **Merge Two Checkpoints**
 
-### Command-Line Arguments
+### Command-Line Arguments:
 
-| Argument           | Description                                                                                  |
-|--------------------|----------------------------------------------------------------------------------------------|
-| `--operation`      | The operation to perform. Options: `merge_loras`, `merge_lora_checkpoint`, `merge_checkpoints`. |
-| `--model1`         | Path to the first model file.                                                                 |
-| `--model2`         | Path to the second model file (optional for LoRA into checkpoint).                            |
-| `--output`         | Path where the merged model will be saved.                                                    |
-| `--alpha`          | Blend ratio for merging two models (default is 0.5).                                          |
-| `--merge_weight`   | Weight for merging LoRA into a checkpoint (default is 0.5).                                   |
+| Argument         | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `--operation`    | Select operation: `merge_loras`, `merge_lora_checkpoint`, `merge_checkpoints`|
+| `--model1`       | Path to the first model file.                                                |
+| `--model2`       | Path to the second model file (optional for LoRA into checkpoint).           |
+| `--output`       | Output path for the merged model.                                            |
+| `--alpha`        | Blend ratio for merging models (default: 0.5).                               |
+| `--merge_weight` | Weight for merging LoRA into checkpoint (default: 0.5).                      |
 
 ### Example 1: Merging Two LoRA Models
-
-To merge two LoRA models:
 
 ```bash
 python main.py --operation merge_loras --model1 lora1.safetensors --model2 lora2.safetensors --output output_lora.safetensors --alpha 0.7
 ```
 
-In this case, the LoRA models will be merged with a blend ratio of 70% from `lora1.safetensors` and 30% from `lora2.safetensors`.
+This command merges `lora1.safetensors` and `lora2.safetensors`, with 70% contribution from `lora1`.
 
 ### Example 2: Merging LoRA into a Checkpoint
-
-To merge a LoRA model into a checkpoint:
 
 ```bash
 python main.py --operation merge_lora_checkpoint --model1 lora_model.safetensors --model2 checkpoint_model.safetensors --output output_checkpoint.safetensors --merge_weight 0.6
 ```
 
-In this case, the LoRA model will be merged into the checkpoint with 60% influence from the LoRA model.
+In this example, the LoRA model merges into the checkpoint with 60% influence.
 
 ### Example 3: Merging Two Checkpoints
-
-To merge two checkpoint models:
 
 ```bash
 python main.py --operation merge_checkpoints --model1 checkpoint1.safetensors --model2 checkpoint2.safetensors --output output_checkpoint.safetensors --alpha 0.5
 ```
 
-Here, both checkpoint models will be merged with a 50-50 blend ratio.
+Merges both checkpoint models in a 50-50 blend.
+
+---
 
 ## Supported Formats
 
-- `.safetensors`: This format is used for loading and saving all models to ensure safe handling and efficient merging operations.
+- **`.safetensors`**: Ensures safe, optimized storage and handling of AI models.
+
+---
+
+## Donation EnhanceAI.art
+
+👏 If you find this tool helpful, please consider supporting the development by checking out our pricing plans at [enhanceai.art/pricing](https://enhanceai.art/pricing). By purchasing any plan, not only will you be supporting future open-source projects like this, but you'll also unlock **many exclusive AI features** that will greatly enhance yourself AI workflows!
+
+---
 
 ## Support
 
-For further support, please join our [Discord server](https://discord.gg/wtyHstGZ).
+For assistance, join our [Discord server](https://discord.gg/wtyHstGZ) to connect with the community and developers.
+
+---
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or a pull request for bug fixes, improvements, or new features.
-
+We welcome contributions! Feel free to open issues, submit pull requests, or suggest features that would improve this tool. All contributions are highly appreciated.
