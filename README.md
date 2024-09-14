@@ -24,7 +24,7 @@ To set up the tool, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/merge-diffusion-tool.git
+   git clone https://github.com/itspranavajay/Merge-Diffusion-Tool.git
    cd merge-diffusion-tool
    ```
 
