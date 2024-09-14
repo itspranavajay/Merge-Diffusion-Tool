@@ -47,7 +47,7 @@ The `Merge Diffusion Tool` can handle three types of merging operations:
 To merge two LoRA models:
 
 ```bash
-python merge_diffusion_tool.py --operation merge_loras --model1 lora1.safetensors --model2 lora2.safetensors --output output_lora.safetensors --alpha 0.7
+python main.py --operation merge_loras --model1 lora1.safetensors --model2 lora2.safetensors --output output_lora.safetensors --alpha 0.7
 ```
 
 In this case, the LoRA models will be merged with a blend ratio of 70% from `lora1.safetensors` and 30% from `lora2.safetensors`.
@@ -57,7 +57,7 @@ In this case, the LoRA models will be merged with a blend ratio of 70% from `lor
 To merge a LoRA model into a checkpoint:
 
 ```bash
-python merge_diffusion_tool.py --operation merge_lora_checkpoint --model1 lora_model.safetensors --model2 checkpoint_model.safetensors --output output_checkpoint.safetensors --merge_weight 0.6
+python main.py --operation merge_lora_checkpoint --model1 lora_model.safetensors --model2 checkpoint_model.safetensors --output output_checkpoint.safetensors --merge_weight 0.6
 ```
 
 In this case, the LoRA model will be merged into the checkpoint with 60% influence from the LoRA model.
@@ -67,7 +67,7 @@ In this case, the LoRA model will be merged into the checkpoint with 60% influen
 To merge two checkpoint models:
 
 ```bash
-python merge_diffusion_tool.py --operation merge_checkpoints --model1 checkpoint1.safetensors --model2 checkpoint2.safetensors --output output_checkpoint.safetensors --alpha 0.5
+python main.py --operation merge_checkpoints --model1 checkpoint1.safetensors --model2 checkpoint2.safetensors --output output_checkpoint.safetensors --alpha 0.5
 ```
 
 Here, both checkpoint models will be merged with a 50-50 blend ratio.
